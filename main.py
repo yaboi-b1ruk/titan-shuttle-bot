@@ -19,7 +19,8 @@ from telegram.error import TimedOut
 # ==============================
 # CONFIG
 # ==============================
-TOKEN = "TELEGRAM_TOKEN"
+import os
+TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHANNEL_ID = "@titanshuttle"
 ALLOWED_DRIVERS = [1262116449]
 MAX_SEATS = 5
@@ -259,3 +260,4 @@ app.add_handler(CallbackQueryHandler(button_handler))
 print("🚀 TITAN Shuttle Bot Running...")
 
 app.run_polling()
+
